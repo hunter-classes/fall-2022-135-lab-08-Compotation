@@ -1,4 +1,5 @@
-
+all: sample.o imageio.o
+	g++ -o sample sample.o imageio.o
 
 sample: sample.o imageio.o
 	g++ -o sample sample.o imageio.o
