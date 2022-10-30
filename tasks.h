@@ -8,3 +8,4 @@ int rightHalfIndex(int width);
 void invertRight(int img[][MAX_W], const int &h, const int &w);
 int middleStartIndex(int size);
 int middleEndIndex(int size);
+void box(int img[][MAX_W], const int &h, const int &w);
