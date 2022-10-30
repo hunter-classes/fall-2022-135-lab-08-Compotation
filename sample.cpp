@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "imageio.h"
-
+#include "tasks.h"
 
 int main()
 {
@@ -26,6 +26,7 @@ int main()
   
   // and save this new image to file "outImage.pgm"
   writeImage("outImage.pgm",out, h, w);
+  invert("taskA-input.pgm");
 
   
   return 0;
