@@ -1,10 +1,7 @@
 #include "tasks.h"
 #include "imageio.h"
 
-void invert(const std::string& fileName) {
-  int img[MAX_H][MAX_W];
-  int h, w;
-  readImage(fileName, img, h, w);
+void invert(int img[][MAX_W], const int &h, const int &w) {
   int out[MAX_H][MAX_W];
 
   for(int row = 0; row < h; row++) {
@@ -16,10 +13,7 @@ void invert(const std::string& fileName) {
   writeImage("taskA.pgm",out, h, w);
 }
 
-void invertRight(const std::string& fileName) {
-  int img[MAX_H][MAX_W];
-  int h, w;
-  readImage(fileName, img, h, w);
+void invertRight(int img[][MAX_W], const int &h, const int &w) {
   int out[MAX_H][MAX_W];
 
   int firstRightIndex = rightHalfIndex(w);
