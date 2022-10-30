@@ -47,3 +47,11 @@ int invertNumber(int num) {
 int rightHalfIndex(int width) {
   return width/2 + 1;
 }
+
+int middleStartIndex(int size) {
+  return size/4;
+}
+
+int middleEndIndex(int size) {
+  return size - (size/4);
+}
