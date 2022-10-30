@@ -1,8 +1,9 @@
+CXXFLAGS = -Wall -g
 all: sample.o imageio.o
-	g++ -o sample sample.o imageio.o
+	g++ ${CXXFLAGS} -o sample sample.o imageio.o
 
 sample: sample.o imageio.o
-	g++ -o sample sample.o imageio.o
+	g++ ${CXXFLAGS} -o sample sample.o imageio.o
 
 sample.o: sample.cpp imageio.h
 
