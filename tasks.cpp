@@ -1,5 +1,6 @@
 #include "tasks.h"
 #include "imageio.h"
+#include <iostream>
 
 void invert(int img[][MAX_W], const int &h, const int &w) {
   int out[MAX_H][MAX_W];
@@ -68,6 +69,23 @@ void frame(int img[][MAX_W], const int &h, const int &w) {
   writeImage("taskD.pgm", out, h, w);
 }
 
+void scale(int img[][MAX_W], const int &h, const int &w) {
+  int out[MAX_H][MAX_W];
+  int originalRow = 0;
+  int originalColumn = 0;
+  int newHeight = h*2;
+  int newWidth = w*2;
+  for (int row = 0; row < h; row++) {
+    for (int col = 0; col < w; col++) {
+      out[2*row][2*col] = img[row][col];
+      out[2*row][2*col + 1] = img[row][col];
+      out[2*row + 1][2*col] = img[row][col];
+      out[2*row + 1][2*col + 1] = img[row][col];
+    }
+  }
+  writeImage("taskE.pgm", out, newHeight, newWidth);
+}
+
 int invertNumber(int num) {
   int distFrom255 = 255 - num;
   if (num > distFrom255) {
@@ -86,4 +104,13 @@ int middleStartIndex(int size) {
 
 int middleEndIndex(int size) {
   return size - (size/4);
+}
+
+void print2DArray(int arr[][MAX_W], int h, int w) {
+  for (int row = 0; row < h; row++) {
+    for (int col = 0; col < w; col++) {
+      std::cout << arr[row][col] << " ";
+    }
+    std::cout << "\n";
+  }
 }
