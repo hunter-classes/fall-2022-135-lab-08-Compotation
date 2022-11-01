@@ -11,4 +11,4 @@ imageio.o: imageio.cpp imageio.h
 
 
 clean:
-	rm -f *.o
+	rm -f *.o task*.pgm

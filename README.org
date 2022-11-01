@@ -6,7 +6,7 @@
 
 * GitHub username: Compotation
 
-* Notes:
+* Notes: Task E (Scale 200%) uses *cat.pgm* for the source image instead of *image1.pgm* b/c scaling *image1.pgm* by 200% would exceed the max width and height.
 
 
   
