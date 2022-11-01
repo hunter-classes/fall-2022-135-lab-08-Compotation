@@ -72,8 +72,6 @@ void frame(int img[][MAX_W], const int &h, const int &w) {
 
 void scale(int img[][MAX_W], const int &h, const int &w) {
   int out[MAX_H][MAX_W];
-  int originalRow = 0;
-  int originalColumn = 0;
   int newHeight = h*2;
   int newWidth = w*2;
   for (int row = 0; row < h; row++) {
