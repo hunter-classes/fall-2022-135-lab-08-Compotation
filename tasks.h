@@ -12,3 +12,5 @@ void box(int img[][MAX_W], const int &h, const int &w);
 void frame(int img[][MAX_W], const int &h, const int &w);
 void scale(int img[][MAX_W], const int &h, const int &w);
 void print2DArray(int arr[][MAX_W], int h, int w);
+void pixelate(int img[][MAX_W], const int &h, const int &w);
+int average4(int a, int b, int c, int d);

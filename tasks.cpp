@@ -1,6 +1,7 @@
 #include "tasks.h"
 #include "imageio.h"
 #include <iostream>
+#include <cmath>
 
 void invert(int img[][MAX_W], const int &h, const int &w) {
   int out[MAX_H][MAX_W];
@@ -84,6 +85,24 @@ void scale(int img[][MAX_W], const int &h, const int &w) {
     }
   }
   writeImage("taskE.pgm", out, newHeight, newWidth);
+}
+
+void pixelate(int img[][MAX_W], const int &h, const int &w) {
+  int out[MAX_H][MAX_W];
+  for (int row = 0; row < h; row+=2) {
+    for (int col = 0; col < w; col+=2) {
+      int avg = average4(img[row][col], img[row][col+1], img[row+1][col], img[row+1][col+1]);
+      out[row][col] = avg;
+      out[row][col+1] = avg;
+      out[row+1][col] = avg;
+      out[row+1][col+1] = avg;
+    }
+  }
+  writeImage("taskF.pgm", out, h, w);
+}
+
+int average4(int a, int b, int c, int d) {
+  return round((a + b + c + d)/4.0);
 }
 
 int invertNumber(int num) {
