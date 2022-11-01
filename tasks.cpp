@@ -49,6 +49,25 @@ void box(int img[][MAX_W], const int &h, const int &w) {
   writeImage("taskC.pgm",out, h, w);
 }
 
+int frame(int img[][MAX_W], const int &h, const int &w) {
+  int startCol = middleStartIndex(w);
+  int endCol = middleEndIndex(w);
+  int startRow = middleStartIndex(h);
+  int endRow = middleEndIndex(h);
+
+  int out[MAX_H][MAX_W];
+  for (int row = 0; row < h; row++) {
+    for (int col = 0; col < w; col++) {
+      if ((row <= endRow && row >= startRow && col <= endCol && col >= startCol) && (row == startRow || row == endRow || col == startCol || col == endCol)) {
+          out[row][col] = 255;
+      } else {
+        out[row][col] = img[row][col];
+      }
+    }
+  }
+  writeImage("taskD.pgm", out, h, w);
+}
+
 int invertNumber(int num) {
   int distFrom255 = 255 - num;
   if (num > distFrom255) {
