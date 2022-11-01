@@ -49,7 +49,7 @@ void box(int img[][MAX_W], const int &h, const int &w) {
   writeImage("taskC.pgm",out, h, w);
 }
 
-int frame(int img[][MAX_W], const int &h, const int &w) {
+void frame(int img[][MAX_W], const int &h, const int &w) {
   int startCol = middleStartIndex(w);
   int endCol = middleEndIndex(w);
   int startRow = middleStartIndex(h);
